@@ -10,9 +10,9 @@ int main(void) {
     int i, j, k;
     bool is_success = false;
     for (i = 1; i <= n / a; i++) {
-        for (j = 1; j <= n / b; j++) {
+        for (j = 2; j <= n / b; j+=2) {
             for (k = 1; k <= n / c; k++) {
-                if (n - a*i - b*j - c*k == 0 && b % 2 == 0 && (k < i || k < j)) {
+                if (a*i + b*j + c*k == n && (k < i || k < j)) {
                     printf("%d %d %d\n", i, j, k);
                     is_success = true;
                 }
